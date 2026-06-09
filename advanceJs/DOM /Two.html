@@ -1,0 +1,38 @@
+<!---------Create Element and Append it to the DOM------------------->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+
+<body style="background-color:black;color:white;">
+    <ul class="languages">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLists(list) {
+        const li = document.createElement('li');
+        li.innerHTML = list;
+        document.querySelector('.languages').append(li);
+    }
+    addLists('Python');
+    addLists('Javascript');
+
+    //---EDIT ELEMENTS- one example--
+    const SecondElement = document.querySelector('li:nth-child(2)');
+    SecondElement.innerHTML = "TypeScript";
+
+    //---EDIT ELEMENTS- second example--
+    const thirdElement = document.querySelector('li:nth-child(3)');
+    thirdElement.outerHTML = '<li>Node.js</li>';
+
+    //-----REMOVE ELEMENTS-----
+    const LastElement=document.querySelector('li:last-child');
+    LastElement.remove();
+</script>
+
+</html>
